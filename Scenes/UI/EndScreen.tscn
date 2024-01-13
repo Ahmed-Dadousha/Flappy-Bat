@@ -150,7 +150,7 @@ grow_vertical = 2
 position = Vector2(30, 30)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_3xnha")
-animation = &"Player1"
+animation = &"Player3"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/charcterSelectioon"]
 layout_mode = 1

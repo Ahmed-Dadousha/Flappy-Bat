@@ -71,6 +71,7 @@ position = Vector2(313, 0)
 position = Vector2(463, 0)
 
 [node name="Ground" type="StaticBody2D" parent="." groups=["Pipes"]]
+collision_layer = 2
 
 [node name="Ground" type="Sprite2D" parent="Ground"]
 position = Vector2(251.5, 666)
@@ -86,6 +87,8 @@ position = Vector2(69, 315)
 
 [node name="Respawner" type="Area2D" parent="."]
 position = Vector2(1, 76)
+collision_layer = 4
+collision_mask = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Respawner"]
 root_node = NodePath("../..")
