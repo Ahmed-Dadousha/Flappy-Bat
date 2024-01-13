@@ -1,0 +1,190 @@
+[gd_scene load_steps=16 format=3 uid="uid://dmldrewmf2r1w"]
+
+[ext_resource type="Script" path="res://Scripts/EndScreen.gd" id="1_akxak"]
+[ext_resource type="Texture2D" uid="uid://d3kmum04dqpyd" path="res://Assets/flappy-bird-assets-master/sprites/gameover.png" id="1_q4cfs"]
+[ext_resource type="Texture2D" uid="uid://b4vypsmulvrrc" path="res://Assets/flappy-bird-assets-master/sprites/playbtn.png" id="3_ges8a"]
+[ext_resource type="Texture2D" uid="uid://dc5mnyuqlcd0" path="res://Assets/flappy-bird-assets-master/sprites/yellowbird-upflap.png" id="4_hxk2f"]
+[ext_resource type="Texture2D" uid="uid://bkcmxpq4u43d8" path="res://Assets/flappy-bird-assets-master/sprites/yellowbird-midflap.png" id="5_m7lh0"]
+[ext_resource type="Texture2D" uid="uid://rnapfwjyuqtk" path="res://Assets/flappy-bird-assets-master/sprites/yellowbird-downflap.png" id="6_wvehb"]
+[ext_resource type="Texture2D" uid="uid://djc3vgcjnoocj" path="res://Assets/flappy-bird-assets-master/sprites/bluebird-upflap.png" id="7_1lmhq"]
+[ext_resource type="Texture2D" uid="uid://f2w4o0uxgetd" path="res://Assets/flappy-bird-assets-master/sprites/bluebird-midflap.png" id="8_u6wvn"]
+[ext_resource type="Texture2D" uid="uid://bjvf5xbv27p08" path="res://Assets/flappy-bird-assets-master/sprites/bluebird-downflap.png" id="9_b1fbv"]
+[ext_resource type="Texture2D" uid="uid://bs5ptguwbnnrl" path="res://Assets/flappy-bird-assets-master/sprites/redbird-upflap.png" id="10_fxlod"]
+[ext_resource type="Texture2D" uid="uid://csfy2fujll4rt" path="res://Assets/flappy-bird-assets-master/sprites/redbird-midflap.png" id="11_f4dww"]
+[ext_resource type="Texture2D" uid="uid://de7e3vtty70v8" path="res://Assets/flappy-bird-assets-master/sprites/redbird-downflap.png" id="12_0dbvh"]
+[ext_resource type="Texture2D" uid="uid://fgrh3t803hji" path="res://Assets/flappy-bird-assets-master/sprites/Arrow-Left-icon.png" id="13_fwvlb"]
+[ext_resource type="Texture2D" uid="uid://cvb4oxh66nwpw" path="res://Assets/flappy-bird-assets-master/sprites/Arrow-Right-1-icon.png" id="14_s533p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3xnha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hxk2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m7lh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wvehb")
+}],
+"loop": true,
+"name": &"Player1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_1lmhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u6wvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b1fbv")
+}],
+"loop": true,
+"name": &"Player2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_fxlod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_f4dww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0dbvh")
+}],
+"loop": true,
+"name": &"Player3",
+"speed": 5.0
+}]
+
+[node name="EndScreen" type="CanvasLayer"]
+script = ExtResource("1_akxak")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -175.0
+offset_right = 96.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_q4cfs")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = -323.5
+offset_right = 63.5
+offset_bottom = -268.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Score: "
+
+[node name="TextureButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = 133.5
+offset_right = 321.0
+offset_bottom = 318.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_ges8a")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="charcterSelectioon" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -70.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Control/charcterSelectioon"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -41.0
+offset_right = 30.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/charcterSelectioon/Control"]
+position = Vector2(30, 30)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_3xnha")
+animation = &"Player1"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/charcterSelectioon"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -6.0
+offset_right = 75.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="LeftArrow" type="TextureButton" parent="Control/charcterSelectioon/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("13_fwvlb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RightArrow" type="TextureButton" parent="Control/charcterSelectioon/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_s533p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Control/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="animation_changed" from="Control/charcterSelectioon/Control/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
+[connection signal="pressed" from="Control/charcterSelectioon/HBoxContainer/LeftArrow" to="." method="_on_left_arrow_pressed"]
+[connection signal="pressed" from="Control/charcterSelectioon/HBoxContainer/RightArrow" to="." method="_on_right_arrow_pressed"]

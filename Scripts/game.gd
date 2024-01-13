@@ -6,6 +6,7 @@ func _ready():
 	
 	Global.connect("score_change", change_score)
 	
+	
 	# Set random heights for first thee pipes
 	var pipes = get_tree().get_nodes_in_group("Pipes")
 	for pipe in pipes:
@@ -25,7 +26,7 @@ func change_score():
 	audio_stream.play()
 
 func _on_player_player_death():
-	$ui.visible = true
+	$EndScreen.visible = true
 	$Label.visible = false
 	Global.paused = true
 	

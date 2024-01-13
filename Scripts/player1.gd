@@ -5,6 +5,10 @@ var GRAVITY: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var JUMP_VELOCITY: int = -200
 var FALL_SPEED: float = 0.8
 
+func _ready():
+	$AnimatedSprite2D.animation = Global.player
+	$AnimatedSprite2D.play()
+	
 func _physics_process(delta):
 	
 	velocity.y += GRAVITY * delta * FALL_SPEED	

@@ -1,10 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://iw55whjj5m2o"]
+[gd_scene load_steps=15 format=3 uid="uid://iw55whjj5m2o"]
 
 [ext_resource type="Texture2D" uid="uid://dc5mnyuqlcd0" path="res://Assets/flappy-bird-assets-master/sprites/yellowbird-upflap.png" id="1_fwfbp"]
 [ext_resource type="Script" path="res://Scripts/player1.gd" id="1_vpxos"]
 [ext_resource type="Texture2D" uid="uid://bkcmxpq4u43d8" path="res://Assets/flappy-bird-assets-master/sprites/yellowbird-midflap.png" id="2_db2db"]
 [ext_resource type="Texture2D" uid="uid://rnapfwjyuqtk" path="res://Assets/flappy-bird-assets-master/sprites/yellowbird-downflap.png" id="3_ouv1p"]
+[ext_resource type="Texture2D" uid="uid://djc3vgcjnoocj" path="res://Assets/flappy-bird-assets-master/sprites/bluebird-upflap.png" id="5_14mvs"]
 [ext_resource type="AudioStream" uid="uid://cbxfj2me7ammj" path="res://Assets/flappy-bird-assets-master/audio/wing.wav" id="5_j080e"]
+[ext_resource type="Texture2D" uid="uid://f2w4o0uxgetd" path="res://Assets/flappy-bird-assets-master/sprites/bluebird-midflap.png" id="6_h3q4k"]
+[ext_resource type="Texture2D" uid="uid://bjvf5xbv27p08" path="res://Assets/flappy-bird-assets-master/sprites/bluebird-downflap.png" id="7_gf82a"]
+[ext_resource type="Texture2D" uid="uid://bs5ptguwbnnrl" path="res://Assets/flappy-bird-assets-master/sprites/redbird-upflap.png" id="8_3y08h"]
+[ext_resource type="Texture2D" uid="uid://csfy2fujll4rt" path="res://Assets/flappy-bird-assets-master/sprites/redbird-midflap.png" id="9_h3ngp"]
+[ext_resource type="Texture2D" uid="uid://de7e3vtty70v8" path="res://Assets/flappy-bird-assets-master/sprites/redbird-downflap.png" id="10_wat40"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qgffs"]
 animations = [{
@@ -21,6 +27,34 @@ animations = [{
 "loop": true,
 "name": &"Player1",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_14mvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h3q4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gf82a")
+}],
+"loop": true,
+"name": &"Player2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_3y08h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h3ngp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wat40")
+}],
+"loop": true,
+"name": &"Player3",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gl3ad"]
@@ -34,9 +68,7 @@ script = ExtResource("1_vpxos")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qgffs")
-animation = &"Player1"
-autoplay = "Player1"
-frame_progress = 0.41384
+animation = &"Player3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gl3ad")
