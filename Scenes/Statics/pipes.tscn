@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://chnmkc2eistdk"]
+
+[ext_resource type="Texture2D" uid="uid://y1wf0v5wrsrb" path="res://Assets/flappy-bird-assets-master/sprites/pipe-green.png" id="1_765mp"]
+[ext_resource type="Script" path="res://Scripts/pipes.gd" id="1_sp6tk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uunud"]
+size = Vector2(49, 380)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyhbp"]
+size = Vector2(41, 116)
+
+[node name="Pipes" type="StaticBody2D" groups=["Pipes"]]
+script = ExtResource("1_sp6tk")
+
+[node name="upper" type="Sprite2D" parent="."]
+position = Vector2(10, 67.0917)
+rotation = 3.14159
+scale = Vector2(1, 1.20057)
+texture = ExtResource("1_765mp")
+
+[node name="upperColl" type="CollisionShape2D" parent="."]
+position = Vector2(10.5, 67.1835)
+shape = SubResource("RectangleShape2D_uunud")
+
+[node name="downer" type="Sprite2D" parent="."]
+position = Vector2(10, 569.183)
+scale = Vector2(1, 1.18125)
+texture = ExtResource("1_765mp")
+
+[node name="downerColl" type="CollisionShape2D" parent="."]
+position = Vector2(10, 572.683)
+shape = SubResource("RectangleShape2D_uunud")
+
+[node name="ScoreArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea"]
+position = Vector2(10.5, 321)
+shape = SubResource("RectangleShape2D_oyhbp")
+
+[connection signal="body_entered" from="ScoreArea" to="." method="_on_score_area_body_entered"]
